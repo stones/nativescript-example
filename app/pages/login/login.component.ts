@@ -30,7 +30,9 @@ export class LoginComponent implements OnInit {
     }
 
     submit() {
+
         this.authenticating = true;
+
         this.authService.login(this.user)
             .subscribe(
                 () => {
