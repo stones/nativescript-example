@@ -2,6 +2,14 @@
 </ActionBar>
 <StackLayout #container>
 
+    <ListView [items]="detailList" class="list-group">
+        <ng-template let-item="item">
+            <Label  [text]="item.title"
+                   class="list-group-item"></Label>
+            <Label  [text]="item.value"
+                    class="list-group-item"></Label>
+        </ng-template>
+    </ListView>
 
     <Button text="logout" class="submit-button" (tap)="logout()"></Button>
 </StackLayout>
