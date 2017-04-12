@@ -1,13 +1,15 @@
-<ActionBar title="Details page" class="action-bar">
-</ActionBar>
-<StackLayout #container>
+<StackLayout orientation="vertical" #container>
+    <label>
+        <h1>Details</h1>
+    </label>
 
     <ListView [items]="detailList" class="list-group">
         <ng-template let-item="item">
-            <Label  [text]="item.title"
-                   class="list-group-item"></Label>
-            <Label  [text]="item.value"
-                    class="list-group-item"></Label>
+            <StackLayout orientation="horizontal">
+                <Label [text]="item.title"></Label>
+                <Label text=""></Label>
+                <Label [text]="item.value"></Label>
+            </StackLayout>
         </ng-template>
     </ListView>
 
