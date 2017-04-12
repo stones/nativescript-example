@@ -1,2 +1,5 @@
 .DS_Store
+platforms
 node_modules/
+.idea/
+app/**/*.js
