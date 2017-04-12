@@ -1,5 +1,12 @@
-<ActionBar title="My App" class="action-bar">
+<ActionBar title="Stones | Login" class="action-bar">
 </ActionBar>
-<GridLayout>
-    <h1>asdasdasdasasd</h1>
-</GridLayout>
+
+<StackLayout  #container>
+    <TextField #email hint="Email Address" keyboardType="email" [(ngModel)]="user.email"
+               autocorrect="false" autocapitalizationType="none"></TextField>
+
+    <TextField #password hint="Password" secure="true" [(ngModel)]="user.password"></TextField>
+
+    <Button text="Sign in" class="submit-button" (tap)="submit()"></Button>
+
+</StackLayout>
