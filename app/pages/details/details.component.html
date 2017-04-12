@@ -1,11 +1,10 @@
 <StackLayout #container class="container">
     <Label text="Details" class="title"></Label>
-    <ListView [items]="detailList" class="list">
-        <ng-template let-item="item">
-            <StackLayout orientation="horizontal">
-                <Label [text]="item.title"></Label>
-                <Label text=":"></Label>
-                <Label [text]="item.value"></Label>
+    <ListView [items]="detailList" >
+        <ng-template let-item="item" >
+            <StackLayout orientation="horizontal" class="item" >
+                <Label [text]="item.title + ':'"  class="name"></Label>
+                <Label [text]="item.value" class="value"></Label>
             </StackLayout>
         </ng-template>
     </ListView>

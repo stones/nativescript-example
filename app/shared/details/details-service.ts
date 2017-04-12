@@ -9,7 +9,8 @@ export default class DetailsService {
 
     getDetails() {
         let details = [];
-        details.push(new Detail("Awesomeness", this.getValue(100, 10000)));
+        details.push(new Detail("Awesomeness", this.getValue(10000, 8000000)));
+        details.push(new Detail("Other things", this.getValue(100, 10000)));
         return details;
     }
 

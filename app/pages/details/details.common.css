@@ -1,17 +1,25 @@
 .title{
-   font-size:40pt;
+   font-size:20pt;
     font-weight:bold;
     text-transform: uppercase;
 }
 
-.list{
-    margin-top: 10;
-    margin-bottom: 10;
+.name,.value{
+    width:50%;
 }
-
+.value{
+    text-align: right;
+}
+.item{
+    border-color: transparent;
+    margin: 20px 0 0 0;
+}
 .container{
+    margin-top: 50;
     margin-left: 30;
     margin-right: 30;
     padding-bottom: 15;
-    height: 300;
+}
+.submit-button{
+    margin-top:30;
 }
