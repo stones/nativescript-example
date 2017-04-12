@@ -1,0 +1,28 @@
+StackLayout {
+    margin-left: 30;
+    margin-right: 30;
+    padding-bottom: 15;
+    height: 350;
+}
+
+Image {
+    margin-bottom: 30;
+}
+
+Button, TextField {
+    margin-left: 16;
+    margin-right: 16;
+    margin-bottom: 10;
+}
+
+TextField {
+    border-width: 0 0 1;
+    border-color: #4b4b4b;
+}
+
+Button {
+    height: 40;
+    color: white;
+    margin-top: 30;
+    background-color: #4b4b4b;
+}

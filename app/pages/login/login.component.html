@@ -1,9 +1,19 @@
-<StackLayout  #container>
-    <TextField #email hint="Email Address" keyboardType="email" [(ngModel)]="user.email"
-               autocorrect="false" autocapitalizationType="none"></TextField>
+<StackLayout #container>
 
-    <TextField #password hint="Password" secure="true" [(ngModel)]="user.password"></TextField>
+    <StackLayout [visibility]="!authenticating ? 'visible' : 'collapse'">
 
-    <Button text="Sign in" class="submit-button" (tap)="submit()"></Button>
+        <Image src="res://logo"  horizontalAlignment="center" width="40"></Image>
+
+        <TextField #email hint="Email Address" keyboardType="email" [(ngModel)]="user.email"
+                   autocorrect="false" autocapitalizationType="none"></TextField>
+
+        <TextField #password hint="Password" secure="true" [(ngModel)]="user.password"></TextField>
+
+        <Button text="Sign in" class="submit-button" (tap)="submit()"></Button>
+
+    </StackLayout>
+
+    <ActivityIndicator [busy]="authenticating" [visibility]="authenticating ? 'visible' : 'collapse'" row="1"
+                       horizontalAlignment="center" verticalAlignment="center"></ActivityIndicator>
 
 </StackLayout>

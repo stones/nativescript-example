@@ -2,6 +2,8 @@ import {Component, OnInit} from "@angular/core";
 import {User} from "../../shared/user/user";
 import AuthenticationService from "../../shared/authentication/authentication-service";
 
+import {Page} from "ui/page";
+
 import {Router} from "@angular/router";
 
 @Component({
@@ -14,18 +16,27 @@ import {Router} from "@angular/router";
 
 export class LoginComponent implements OnInit {
     user: User;
+    authenticating: boolean;
 
-    constructor(private router: Router) {
+    constructor(private router: Router, private authService: AuthenticationService, private page: Page) {
         this.user = new User();
         this.user.email = "tom@tomstones.com.au";
         this.user.password = "password";
+        page.actionBarHidden = true;
     }
 
     ngOnInit(): void {
-
+        this.authenticating = false;
     }
 
     submit() {
-        this.router.navigate(["/details"])
+        this.authenticating = true;
+        this.authService.login(this.user)
+            .subscribe(
+                () =>{
+                    this.router.navigate(["/details"]);
+                },
+                (error) => alert("I don't know who that is.")
+            );
     }
 }

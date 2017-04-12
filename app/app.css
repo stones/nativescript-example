@@ -9,4 +9,30 @@ In many cases you may want to use the NativeScript core theme instead
 of writing your own CSS rules. For a full list of class names in the theme
 refer to http://docs.nativescript.org/ui/theme.
 */
-@import 'nativescript-theme-core/css/core.light.css';
+@import url("~/platform.css");
+
+Page {
+    font-size: 15;
+    color: #4b4b4b;
+}
+
+TextField {
+    padding: 10;
+    font-size: 13;
+}
+
+.small-spacing {
+    margin: 5;
+}
+
+.medium-spacing {
+    margin: 10;
+}
+
+
+Button {
+    height: 40;
+    color: white;
+    margin-top: 15;
+    background-color: #4b4b4b;
+}

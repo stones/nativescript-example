@@ -1,5 +1,6 @@
 import {Component, OnInit} from "@angular/core";
 import {Router} from "@angular/router";
+import {Page} from "ui/page";
 
 import DetailsService from "../../shared/details/details-service";
 import Detail from "../../shared/details/detail";
@@ -15,8 +16,9 @@ import Detail from "../../shared/details/detail";
 export class DetailsComponent implements OnInit {
     detailList: Array<Detail> = [];
 
-    constructor(private router:Router, detailsService: DetailsService){
-        this.detailList = detailsService.get()
+    constructor(private router:Router, detailsService: DetailsService, page: Page){
+        this.detailList = detailsService.get();
+        page.actionBarHidden = true;
     }
 
     ngOnInit(): void {

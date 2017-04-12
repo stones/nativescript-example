@@ -1,17 +1,13 @@
-<StackLayout orientation="vertical" #container>
-    <label>
-        <h1>Details</h1>
-    </label>
-
-    <ListView [items]="detailList" class="list-group">
+<StackLayout #container class="container">
+    <Label text="Details" class="title"></Label>
+    <ListView [items]="detailList" class="list">
         <ng-template let-item="item">
             <StackLayout orientation="horizontal">
                 <Label [text]="item.title"></Label>
-                <Label text=""></Label>
+                <Label text=":"></Label>
                 <Label [text]="item.value"></Label>
             </StackLayout>
         </ng-template>
     </ListView>
-
     <Button text="logout" class="submit-button" (tap)="logout()"></Button>
 </StackLayout>
