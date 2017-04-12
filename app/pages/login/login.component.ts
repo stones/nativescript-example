@@ -33,10 +33,13 @@ export class LoginComponent implements OnInit {
         this.authenticating = true;
         this.authService.login(this.user)
             .subscribe(
-                () =>{
+                () => {
                     this.router.navigate(["/details"]);
                 },
-                (error) => alert("I don't know who that is.")
+                (error) => {
+                    this.authenticating = false;
+                    alert("I don't know who that is.")
+                }
             );
     }
 }
