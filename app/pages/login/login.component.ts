@@ -1,7 +1,6 @@
 import {Component, OnInit} from "@angular/core";
 import {User} from "../../shared/user/user";
 import AuthenticationService from "../../shared/authentication/authentication-service";
-
 import {Page} from "ui/page";
 
 import {Router} from "@angular/router";
@@ -30,18 +29,15 @@ export class LoginComponent implements OnInit {
     }
 
     submit() {
-
         this.authenticating = true;
-
         this.authService.login(this.user)
             .subscribe(
-                () => {
-                    this.router.navigate(["/details"]);
-                },
+                () => this.router.navigate(["/details"]),
                 (error) => {
                     this.authenticating = false;
                     alert("I don't know who that is.")
                 }
             );
     }
+
 }

@@ -16,13 +16,14 @@ export default class AuthenticationService {
         let headers = new Headers();
         headers.append("Content-Type", "application/json");
 
+        let credentials = {
+            username: user.email,
+            password: user.password,
+            grant_type: "password"
+        };
         return this.http.post(
             Config.apiUrl + "oauth/token",
-            JSON.stringify({
-                username: user.email,
-                password: user.password,
-                grant_type: "password"
-            }),
+            JSON.stringify(credentials),
             {headers: headers}
         )
             .map(response => response.json())

@@ -7,6 +7,7 @@ import {NativeScriptHttpModule} from "nativescript-angular/http";
 import {AppRoutingModule} from "./app.routing";
 import {AppComponent} from "./app.component";
 
+import {FingerprintComponent} from "./pages/fingerprint/fingerprint.component";
 import {LoginComponent} from "./pages/login/login.component";
 import {DetailsComponent} from "./pages/details/details.component";
 
@@ -23,6 +24,7 @@ import {DetailsComponent} from "./pages/details/details.component";
     declarations: [
         AppComponent,
         DetailsComponent,
+        FingerprintComponent,
         LoginComponent
     ],
     providers: [],
